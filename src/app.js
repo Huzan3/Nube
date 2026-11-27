@@ -43,9 +43,6 @@ function createApp(repository) {
   app.use((err, req, res, next) =>
     res.status(err.status || 500).json({ error: err.status ? err.message : 'Error interno' }),
   );
-  if (process.env.LINT_CHECK === 'fail') {
-    console.log(variableQueNoExiste);
-  }
   return app;
 }
 module.exports = { createApp };
